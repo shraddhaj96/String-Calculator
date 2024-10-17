@@ -10,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'string-calculator';
+  ngOnInit(): void {
+    this.stringCalc();
+  }
+  stringCalc(){
+       console.log("function call")
+  }
 }
