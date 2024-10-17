@@ -16,5 +16,13 @@ describe('StringCalculatorService', () => {
   it('should return 0 for an empty string', () => {
     expect(service.add('')).toBe(0);
   });
-  
+  it('should return 1 for number itself', () => {
+    expect(service.add('1')).toBe(1);
+  });
+  it('should return sum for two numbers', () => {
+    expect(service.add('1,2')).toBe(3);
+  });
+  it('should return sum for n number of numbers', () => {
+    expect(service.add('1,2,3,4,5')).toBe(15);
+  });
 });
