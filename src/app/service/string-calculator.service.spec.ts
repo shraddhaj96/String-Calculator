@@ -25,4 +25,7 @@ describe('StringCalculatorService', () => {
   it('should return sum for n number of numbers', () => {
     expect(service.add('1,2,3,4,5')).toBe(15);
   });
+  it('should handle new line as a delimiter', () => {
+    expect(service.add("1\n2,3")).toBe(6);
+  });
 });

@@ -20,9 +20,10 @@ export class AppComponent {
   }
   stringCalc(){
        console.log("function call");
-       console.log(this.stringCalculatorService.add(""))
+       console.log(this.stringCalculatorService.add(""));
        console.log(this.stringCalculatorService.add("1"))
        console.log(this.stringCalculatorService.add("1,2"))
        console.log(this.stringCalculatorService.add("1,2,3,4,5"))
+       console.log(this.stringCalculatorService.add("1\n2,3"))
   }
 }

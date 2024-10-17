@@ -12,8 +12,9 @@ export class StringCalculatorService {
       return 0; // Empty input should return 0
     }
     
-    let numberArray = numbers.split(',').map(Number);
-    let sum = numberArray.reduce((sum, num) => sum + num, 0);
+    //let numberArray = numbers.split(',').map(Number);
+    const numberArray = numbers.replace(/\n/g, ",").split(",");
+    let sum = numberArray.reduce((sum, num) => sum + parseInt(num, 10),0);
 
     return sum;
   }
