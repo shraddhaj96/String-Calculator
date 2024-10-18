@@ -47,4 +47,7 @@ describe('StringCalculatorService', () => {
   it('Ignore values greater than 1000', () => {
     expect(service.add("2,1001")).toBe(2);
   });
+  it('handling delimiters can be of any length', () => {
+    expect(service.add("//[***]\n1***2***3")).toBe(6);
+  });
 });

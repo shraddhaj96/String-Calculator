@@ -34,7 +34,9 @@ export class StringCalculatorService {
    // let sum = numberArray.reduce((sum, num) => sum + parseInt(num, 10),0);
    let sum = numberArray.reduce((sum, num) => {
     const n = parseInt(num, 10);
-    
+    if (isNaN(n)) {
+      return sum; // Skip invalid numbers
+    }
     if (n < 0) {
       negatives.push(n); // Collect negative numbers
     }
