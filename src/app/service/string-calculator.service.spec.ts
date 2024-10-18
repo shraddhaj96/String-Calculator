@@ -28,4 +28,7 @@ describe('StringCalculatorService', () => {
   it('should handle new line as a delimiter', () => {
     expect(service.add("1\n2,3")).toBe(6);
   });
+  it('should handle custom delimiters', () => {
+    expect(service.add("//;\n1;2")).toBe(3);
+  });
 });
