@@ -1,4 +1,25 @@
-<h1>Hello, string-calculator</h1>
-
-
-{{result}}
+<div class="container  bg-light">
+  <h1 class="text-center title pt-3">Hello, string-calculator</h1>
+  <div class="row" >
+<div class="col-7 mx-auto  p-2" >
+  <div class="row bg-white m-1" *ngFor="let item of keyValueArray">
+    <div class="col-6">
+      <h6 class=" p-2">{{item.key | json}}</h6>
+      
+    </div>
+    <div class="col-6">
+      <h6 class=" p-2">{{item.value | json}}</h6>
+     
+    </div>
+    <div class="underline"></div>
+  </div>
+  
+ 
+</div>
+    
+   
+    
+   
+   
+  </div>
+</div>
