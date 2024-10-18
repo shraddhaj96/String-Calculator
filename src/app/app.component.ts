@@ -26,6 +26,7 @@ export class AppComponent {
     this.stringCalc("//;\n1;2"); 
     this.stringCalc("1,-2"); 
     this.stringCalc("1,-2,-3"); 
+    this.stringCalc("2,1001"); 
   }
   stringCalc(input: string){
       try {

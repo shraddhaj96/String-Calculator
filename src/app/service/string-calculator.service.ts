@@ -38,7 +38,10 @@ export class StringCalculatorService {
     if (n < 0) {
       negatives.push(n); // Collect negative numbers
     }
-
+    // Ignore numbers greater than 1000
+    if (n > 1000) {
+      return sum;
+    }
     return sum + n;
    },0);
    

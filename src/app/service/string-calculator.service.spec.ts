@@ -34,6 +34,7 @@ describe('StringCalculatorService', () => {
   // it('should throw an exception for negative numbers', () => {
   //   expect(service.add("1,-2")).toThrowError('Negative numbers not allowed: -2');
   // });
+
   it('should throw an exception for negative numbers', () => {
     expect(() => {
       service.add("1,-2");
@@ -42,5 +43,8 @@ describe('StringCalculatorService', () => {
 
   it('should throw an exception for multiple negative numbers', () => {
     expect(() => service.add("1,-2,-3")).toThrowError('Negative numbers not allowed: -2,-3');
+  });
+  it('Ignore values greater than 1000', () => {
+    expect(service.add("2,1001")).toBe(2);
   });
 });
