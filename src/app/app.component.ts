@@ -12,19 +12,27 @@ import { StringCalculatorService } from './service/string-calculator.service';
 export class AppComponent {
   title = 'string-calculator';
   resultArray:number[]=[];
+  result: any;
   constructor(private stringCalculatorService: StringCalculatorService) {
     
    }
   ngOnInit(): void {
-    this.stringCalc();
+    //this.stringCalc();
+    this.stringCalc("");
+    this.stringCalc("1");
+    this.stringCalc("1,2");
+    this.stringCalc("1,2,3,4,5");
+    this.stringCalc("1\n2,3");
+    this.stringCalc("//;\n1;2"); 
+    this.stringCalc("1,-2"); 
+    this.stringCalc("1,-2,-3"); 
   }
-  stringCalc(){
-       console.log("function call");
-       console.log(this.stringCalculatorService.add(""));
-       console.log(this.stringCalculatorService.add("1"));
-       console.log(this.stringCalculatorService.add("1,2"))
-       console.log(this.stringCalculatorService.add("1,2,3,4,5"))
-       console.log(this.stringCalculatorService.add("1\n2,3"))
-       console.log(this.stringCalculatorService.add("//;\n1;2"))
+  stringCalc(input: string){
+      try {
+        this.result = this.stringCalculatorService.add(input);
+      } catch (error: any) {
+        // Handle the error by setting the result to the error message
+        this.result = error.message;
+      }
   }
 }

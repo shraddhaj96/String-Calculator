@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let fixture;
+  let app;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
@@ -26,4 +28,5 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, string-calculator');
   });
+ 
 });

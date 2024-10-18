@@ -26,12 +26,27 @@ export class StringCalculatorService {
       numbers = parts[1];
     }
     const numberArray = numbers.split(delimiter);
-
+    //array to hold negative numbers
+    const negatives: number[] = [];
     
     //let numberArray = numbers.split(',').map(Number);
     //const numberArray = numbers.replace(/\n/g, ",").split(",");
-    let sum = numberArray.reduce((sum, num) => sum + parseInt(num, 10),0);
+   // let sum = numberArray.reduce((sum, num) => sum + parseInt(num, 10),0);
+   let sum = numberArray.reduce((sum, num) => {
+    const n = parseInt(num, 10);
+    
+    if (n < 0) {
+      negatives.push(n); // Collect negative numbers
+    }
 
-    return sum;
+    return sum + n;
+   },0);
+   
+   
+   if (negatives.length > 0) {
+    throw new Error(`Negative numbers not allowed: ${negatives.join(',')}`);
+  }
+
+  return sum; // Return the final sum
   }
 }

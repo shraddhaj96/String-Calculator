@@ -31,4 +31,16 @@ describe('StringCalculatorService', () => {
   it('should handle custom delimiters', () => {
     expect(service.add("//;\n1;2")).toBe(3);
   });
+  // it('should throw an exception for negative numbers', () => {
+  //   expect(service.add("1,-2")).toThrowError('Negative numbers not allowed: -2');
+  // });
+  it('should throw an exception for negative numbers', () => {
+    expect(() => {
+      service.add("1,-2");
+    }).toThrowError('Negative numbers not allowed: -2');
+  });
+
+  it('should throw an exception for multiple negative numbers', () => {
+    expect(() => service.add("1,-2,-3")).toThrowError('Negative numbers not allowed: -2,-3');
+  });
 });
