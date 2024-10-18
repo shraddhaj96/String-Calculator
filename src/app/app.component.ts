@@ -28,6 +28,8 @@ export class AppComponent {
     this.stringCalc("1,-2,-3"); 
     this.stringCalc("2,1001");
     this.stringCalc("//[***]\n1***2***3") 
+    this.stringCalc("//[*][%]\n1*2%3") 
+    this.stringCalc("//[***][%%][;;]\n1***2%%3;;4") 
   }
   stringCalc(input: string){
       try {

@@ -50,4 +50,10 @@ describe('StringCalculatorService', () => {
   it('handling delimiters can be of any length', () => {
     expect(service.add("//[***]\n1***2***3")).toBe(6);
   });
+  it('Allow multiple delimiters', () => {
+    expect(service.add("//[*][%]\n1*2%3")).toBe(6);
+  });
+  it('handle multiple delimiters with length longer than one char', () => {
+    expect(service.add("//[***][%%][;;]\n1***2%%3;;4")).toBe(10);
+  });
 });
